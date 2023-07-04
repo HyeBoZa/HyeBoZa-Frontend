@@ -39,7 +39,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
-  max-height: 700px;
+  max-height: 400px;
   overflow-y: scroll;
 `;
 

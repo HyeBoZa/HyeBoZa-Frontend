@@ -43,7 +43,7 @@ const Wrapper = styled.div`
 const SearchInput = styled.input`
   width: 800px;
   height: 50px;
-  border-radius: 3.125rem;
+  border-radius: 50px;
   border: 2px solid ${({ theme }) => theme.MAIN1};
   outline: none;
   padding: 20px;

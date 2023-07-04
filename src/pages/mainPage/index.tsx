@@ -27,7 +27,7 @@ const Container = styled.div`
   height: 100vh;
   display: flex;
   align-items: center;
-  padding: 62px;
+  padding: 40px;
   background-image: url(${Background});
   background-size: cover;
   flex-direction: column;
