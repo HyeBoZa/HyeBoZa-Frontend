@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { ArrowIcon } from "../../assets";
+import { DownArrowIcon } from "../../assets";
 import { DropDownItem } from "../../constants/main";
 import { useState } from "react";
 
@@ -19,7 +19,7 @@ const DropDown = ({
     <Container>
       <Head onClick={() => setIsOpenDropDown(!isOpenDropDown)}>
         <p>{dropDownResult}</p>
-        <img src={ArrowIcon} />
+        <img src={DownArrowIcon} />
       </Head>
       {isOpenDropDown && (
         <Body>
