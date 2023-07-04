@@ -2,30 +2,36 @@ import styled from "@emotion/styled";
 import { DownArrowIcon } from "../../assets";
 import { DropDownItem } from "../../constants/main";
 import { useState } from "react";
+import { DropDownItemType } from "../../model";
 
 const DropDown = ({
   dropDownResult,
   setDropDownResult,
 }: {
-  dropDownResult: string;
-  setDropDownResult: React.Dispatch<React.SetStateAction<string>>;
+  dropDownResult: DropDownItemType;
+  setDropDownResult: React.Dispatch<
+    React.SetStateAction<{
+      name: string;
+      id: string;
+    }>
+  >;
 }) => {
   const [isOpenDropDown, setIsOpenDropDown] = useState<boolean>(false);
-  const onChangeValue = (value: string) => {
+  const onChangeValue = (value: DropDownItemType) => {
     setDropDownResult(value);
     setIsOpenDropDown(false);
   };
   return (
     <Container>
       <Head onClick={() => setIsOpenDropDown(!isOpenDropDown)}>
-        <p>{dropDownResult}</p>
+        <p>{dropDownResult.name}</p>
         <img src={DownArrowIcon} />
       </Head>
       {isOpenDropDown && (
         <Body>
           {DropDownItem.map((value, idx) => (
             <p key={idx} onClick={() => onChangeValue(value)}>
-              {value}
+              {value.name}
             </p>
           ))}
         </Body>

@@ -2,10 +2,16 @@ import styled from "@emotion/styled";
 import { RightArrowIcon } from "../../assets";
 import DropDown from "./DropDown";
 import { useNavigate } from "react-router-dom";
+import { DropDownItemType } from "../../model";
 
 interface Props {
-  dropDownResult: string;
-  setDropDownResult: React.Dispatch<React.SetStateAction<string>>;
+  dropDownResult: DropDownItemType;
+  setDropDownResult: React.Dispatch<
+    React.SetStateAction<{
+      name: string;
+      id: string;
+    }>
+  >;
 }
 
 const BtnContainer = ({ dropDownResult, setDropDownResult }: Props) => {
