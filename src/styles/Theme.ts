@@ -3,4 +3,5 @@ export const theme = {
   MAIN2: "#7189DD",
   MAIN3: "#A8B8F2",
   WHITE: "#FFFFFF",
+  SUB: "#6C88EA",
 };
