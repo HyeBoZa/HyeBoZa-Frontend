@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "@emotion/styled";
 import Background from "../../assets/background.png";
 import { Logo } from "../../assets";
 
@@ -6,28 +6,11 @@ const DatailPage = () => {
   return (
     <Layout>
       <Wrapper>
-        <img src={Logo} />
-        <Title>청년 혜택</Title>
-        <Text>
-          청년은 이러한 혜택을 얻을 수 있습니다. 청년은 이러한 혜택을 얻을 수
-          있습니다. 청년은 이러한 혜택을 얻을 수 있습니다. 청년은 이러한 혜택을
-          얻을 수 있습니다. 청년은 이러한 혜택을 얻을 수 있습니다. 청년은 이러한
-          혜택을 얻을 수 있습니다. 청년은 이러한 혜택을 얻을 수 있습니다. 청년은
-          이러한 혜택을 얻을 수 있습니다.청년은 이러한 혜택을 얻을 수 있습니다.
-          청년은 이러한 혜택을 얻을 수 있습니다. 청년은 이러한 혜택을 얻을 수
-          있습니다. 청년은 이러한 혜택을 얻을 수 있습니다.청년은 이러한 혜택을
-          얻을 수 있습니다. 청년은 이러한 혜택을 얻을 수 있습니다. 청년은 이러한
-          혜택을 얻을 수 있습니다. 청년은 이러한 혜택을 얻을 수 있습니다.청년은
-          이러한 혜택을 얻을 수 있습니다. 청년은 이러한 혜택을 얻을 수 있습니다.
-          청년은 이러한 혜택을 얻을 수 있습니다. 청년은 이러한 혜택을 얻을 수
-          있습니다.청년은 이러한 혜택을 얻을 수 있습니다. 청년은 이러한 혜택을
-          얻을 수 있습니다. 청년은 이러한 혜택을 얻을 수 있습니다. 청년은 이러한
-          혜택을 얻을 수 있습니다.청년은 이러한 혜택을 얻을 수 있습니다. 청년은
-          이러한 혜택을 얻을 수 있습니다. 청년은 이러한 혜택을 얻을 수 있습니다.
-          청년은 이러한 혜택을 얻을 수 있습니다.청년은 이러한 혜택을 얻을 수
-          있습니다. 청년은 이러한 혜택을 얻을 수 있습니다. 청년은 이러한 혜택을
-          얻을 수 있습니다. 청년은 이러한 혜택을 얻을 수 있습니다.
-        </Text>
+        <Head>
+          <h1>청년 혜택</h1>
+          <img src={Logo} />
+        </Head>
+        <Text>청년은 이러한 혜택을 얻을 수 있습니다.</Text>
       </Wrapper>
     </Layout>
   );
@@ -36,38 +19,41 @@ const DatailPage = () => {
 const Layout = styled.div`
   width: 100vw;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background-image: url(${Background});
   background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Wrapper = styled.div`
-  width: 1000px;
-  max-height: 860px;
-  border-radius: 12px;
-  border: solid 4px ${({ theme }) => theme.MAIN1};
-  img {
-    width: 120px;
-    float: right;
-    margin: 30px 40px 0 0;
-  }
-  div {
-    margin: 30px 30px 0 40px;
-  }
-  /* overflow-y: hidden; */
-  overflow-y: auto;
-  ::-webkit-scrollbar {
-    display: none;
-  }
-`;
-const Title = styled.div`
-  font-size: 40px;
   color: ${({ theme }) => theme.MAIN1};
+  width: 700px;
+  height: 700px;
+  border: solid 2px ${({ theme }) => theme.MAIN1};
+  border-radius: 12px;
+  background: ${({ theme }) => theme.WHITE};
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 `;
-const Text = styled.div`
-  font-size: 30px;
+
+const Head = styled.div`
+  display: flex;
+  font-size: 15px;
+  justify-content: space-between;
+  align-items: center;
+  > img {
+    width: 80px;
+  }
+`;
+
+const Text = styled.p`
+  font-size: 23px;
+  height: 800px;
+  overflow-y: scroll;
 `;
 
 export default DatailPage;
