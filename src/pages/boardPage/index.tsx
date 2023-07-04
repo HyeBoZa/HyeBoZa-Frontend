@@ -2,8 +2,8 @@ import styled from "@emotion/styled";
 import { ComunityLogo } from "../../assets";
 import Background from "../../assets/background.png";
 import { useState } from "react";
-import ComunityInputContainer from "../../components/comunity/ComunityInputContainer";
 import ComunityList from "../../components/comunity/ComunityList";
+import InputContainer from "../../components/comunity/InputContainer";
 
 const BoardPage = () => {
   const [input, setInput] = useState<string>("");
@@ -12,7 +12,7 @@ const BoardPage = () => {
   return (
     <Container>
       <img src={ComunityLogo} />
-      <ComunityInputContainer
+      <InputContainer
         setInput={setInput}
         dropDownResult={dropDownResult}
         setDropDownResult={setDropDownResult}

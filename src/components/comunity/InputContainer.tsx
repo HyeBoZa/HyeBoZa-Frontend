@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import { RightArrowIcon, SearchIcon } from "../../assets";
-import DropDown from "./DropDown";
 import { useNavigate } from "react-router-dom";
 
 interface Props {
@@ -9,25 +8,21 @@ interface Props {
   setDropDownResult: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const InputContainer = ({
-  setInput,
-  dropDownResult,
-  setDropDownResult,
-}: Props) => {
+const InputContainer = ({ setInput }: Props) => {
   const navigate = useNavigate();
   return (
     <Wrapper>
       <SearchInput
-        placeholder="원하시는 혜택을 검색해주세요."
+        placeholder="찾고싶은 내용을 검색해주세요."
         onChange={(e) => setInput(e.target.value)}
       />
       <img src={SearchIcon} />
-      <DropDown
-        dropDownResult={dropDownResult}
-        setDropDownResult={setDropDownResult}
-      />
-      <Btn onClick={() => navigate("/comunity")}>
-        <p>커뮤니티</p>
+      <Btn onClick={() => navigate("/")}>
+        <p>홈으로</p>
+        <img src={RightArrowIcon} />
+      </Btn>
+      <Btn onClick={() => navigate("/write")}>
+        <p>글쓰러 가기</p>
         <img src={RightArrowIcon} />
       </Btn>
     </Wrapper>

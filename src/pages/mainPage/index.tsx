@@ -1,19 +1,17 @@
 import styled from "@emotion/styled";
 import { Logo } from "../../assets";
 import Background from "../../assets/background.png";
-import InputContainer from "../../components/main/InputContainer";
 import { useState } from "react";
 import List from "../../components/main/List";
+import BtnContainer from "../../components/main/BtnContainer";
 
 const MainPage = () => {
-  const [input, setInput] = useState<string>("");
   const [dropDownResult, setDropDownResult] = useState<string>("카테고리");
 
   return (
     <Container>
       <img src={Logo} />
-      <InputContainer
-        setInput={setInput}
+      <BtnContainer
         dropDownResult={dropDownResult}
         setDropDownResult={setDropDownResult}
       />
