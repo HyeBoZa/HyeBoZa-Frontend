@@ -7,30 +7,6 @@ const List = () => {
         <h3>혜택 제목</h3>
         <p>혜택 상세 내용</p>
       </Content>
-      <Content>
-        <h3>혜택 제목</h3>
-        <p>혜택 상세 내용</p>
-      </Content>
-      <Content>
-        <h3>혜택 제목</h3>
-        <p>혜택 상세 내용</p>
-      </Content>
-      <Content>
-        <h3>혜택 제목</h3>
-        <p>혜택 상세 내용</p>
-      </Content>
-      <Content>
-        <h3>혜택 제목</h3>
-        <p>혜택 상세 내용</p>
-      </Content>
-      <Content>
-        <h3>혜택 제목</h3>
-        <p>혜택 상세 내용</p>
-      </Content>
-      <Content>
-        <h3>혜택 제목</h3>
-        <p>혜택 상세 내용</p>
-      </Content>
     </Container>
   );
 };
@@ -40,7 +16,7 @@ const Container = styled.div`
   flex-direction: column;
   gap: 20px;
   max-height: 1200px;
-  overflow-y: scroll;
+  overflow-y: auto;
 `;
 
 const Content = styled.div`

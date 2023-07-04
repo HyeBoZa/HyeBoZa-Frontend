@@ -53,7 +53,7 @@ const Head = styled.div`
 const Text = styled.p`
   font-size: 23px;
   height: 800px;
-  overflow-y: scroll;
+  overflow-y: auto;
 `;
 
 export default DatailPage;
