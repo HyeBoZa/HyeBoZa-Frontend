@@ -1,4 +1,5 @@
 import { css } from "@emotion/react";
+import Background from "../assets/background.png";
 
 export const globalStyle = css`
   * {
@@ -7,5 +8,7 @@ export const globalStyle = css`
     -webkit-touch-callout: none;
     box-sizing: border-box;
     margin: 0;
+    background-image: url(${Background});
+    background-size: cover;
   }
 `;
