@@ -49,7 +49,6 @@ const SearchInput = styled.input`
   padding: 20px;
   font-size: 20px;
   font-weight: 700;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   background: ${({ theme }) => theme.WHITE};
   ::placeholder {
     color: ${({ theme }) => theme.MAIN3};

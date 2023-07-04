@@ -52,7 +52,6 @@ const Head = styled.div`
   gap: 18px;
   border-radius: 16px;
   font-weight: 700;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 `;
 
 const Body = styled.div`
@@ -67,7 +66,6 @@ const Body = styled.div`
   gap: 16px;
   background-color: ${({ theme }) => theme.WHITE};
   padding: 20px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   position: absolute;
   top: 60px;
 `;
