@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Logo } from "../../assets";
+import { ComunityLogo } from "../../assets";
 import Background from "../../assets/background.png";
 import { useState } from "react";
 import ComunityInputContainer from "../../components/comunity/ComunityInputContainer";
@@ -11,7 +11,7 @@ const BoardPage = () => {
 
   return (
     <Container>
-      <img src={Logo} />
+      <img src={ComunityLogo} />
       <ComunityInputContainer
         setInput={setInput}
         dropDownResult={dropDownResult}
@@ -33,7 +33,7 @@ const Container = styled.div`
   flex-direction: column;
   gap: 43px;
   > img {
-    width: 230px;
+    width: 500px;
   }
 `;
 
