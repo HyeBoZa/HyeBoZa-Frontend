@@ -1,13 +1,18 @@
 import styled from "@emotion/styled";
 import Background from "../../assets/background.png";
 import { Logo } from "../../assets";
+import { useNavigate } from "react-router-dom";
 
 const DatailPage = () => {
+  const navigate = useNavigate();
   return (
     <Layout>
       <Wrapper>
         <Head>
-          <h1>청년 혜택</h1>
+          <div>
+            <h1>청년 혜택</h1>
+            <GoHome onClick={() => navigate("/")}>홈으로 가기</GoHome>
+          </div>
           <img src={Logo} />
         </Head>
         <Text>청년은 이러한 혜택을 얻을 수 있습니다.</Text>
@@ -47,6 +52,10 @@ const Head = styled.div`
   > img {
     width: 80px;
   }
+  > div {
+    display: flex;
+    gap: 12px;
+  }
 `;
 
 const Text = styled.p`
@@ -55,4 +64,14 @@ const Text = styled.p`
   overflow-y: auto;
 `;
 
+const GoHome = styled.button`
+  width: 125px;
+  height: 36px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  background: ${({ theme }) => theme.WHITE};
+  border: 2px solid ${({ theme }) => theme.MAIN1};
+  color: ${({ theme }) => theme.MAIN1};
+`;
 export default DatailPage;
