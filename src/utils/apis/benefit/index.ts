@@ -1,7 +1,7 @@
 import instance from "../../axios";
 
-export const getCategoryBenefit = async (user: string) => {
-  const response = await instance.get(`/benefit?user=${user}`);
+export const getCategoryBenefit = async (category: string) => {
+  const response = await instance.get(`/benefit?user=${category}`);
   return response.data;
 };
 
