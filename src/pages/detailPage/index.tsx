@@ -1,21 +1,38 @@
 import styled from "@emotion/styled";
 import Background from "../../assets/background.png";
 import { Logo } from "../../assets";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { useQuery } from "react-query";
+import { getDetailBenefit } from "../../utils/apis/benefit";
 
 const DatailPage = () => {
   const navigate = useNavigate();
+  const { id }: any = useParams();
+
+  const { data } = useQuery(["benefit_content"], () =>
+    getDetailBenefit(id as number)
+  );
+
+  console.log(data);
+
   return (
     <Layout>
       <Wrapper>
         <Head>
           <div>
-            <h1>청년 혜택</h1>
+            <h1>{data?.title}</h1>
             <GoHome onClick={() => navigate("/")}>홈으로 가기</GoHome>
           </div>
           <img src={Logo} />
         </Head>
-        <Text>청년은 이러한 혜택을 얻을 수 있습니다.</Text>
+        <Text>
+          혜택 종류: {data?.benefit_category}
+          <br />
+          대상자: {data?.control}
+          <br />
+          <br />
+          {data?.content}
+        </Text>
       </Wrapper>
     </Layout>
   );
