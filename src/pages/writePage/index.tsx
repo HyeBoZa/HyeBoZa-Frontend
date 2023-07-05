@@ -1,17 +1,43 @@
 import styled from "@emotion/styled";
 import Background from "../../assets/background.png";
 import { Logo } from "../../assets";
+import { useState } from "react";
+import { useMutation } from "react-query";
+import { postContent } from "../../utils/apis/comunity";
+import { useNavigate } from "react-router-dom";
 
 const WritePage = () => {
+  const navigate = useNavigate();
+  const [inputs, setInputs] = useState({
+    title: "",
+    content: "",
+  });
+
+  const { mutate } = useMutation(() => postContent(inputs), {
+    onSuccess: () => {
+      navigate("/comunity");
+    },
+  });
+
   return (
     <Layout>
       <Wrapper>
         <Head>
-          <Title placeholder="제목을 입력해주세요." />
+          <Title
+            placeholder="제목을 입력해주세요."
+            onChange={(e) =>
+              setInputs({ title: e.target.value, content: inputs.content })
+            }
+          />
           <img src={Logo} />
         </Head>
-        <Text placeholder="내용을 입력해주세요." />
-        <PostBtn>게시하기</PostBtn>
+        <Text
+          placeholder="내용을 입력해주세요."
+          onChange={(e) =>
+            setInputs({ title: inputs.title, content: e.target.value })
+          }
+        />
+        <PostBtn onClick={() => mutate()}>게시하기</PostBtn>
       </Wrapper>
     </Layout>
   );
