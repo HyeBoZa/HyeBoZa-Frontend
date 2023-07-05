@@ -1,12 +1,21 @@
 import styled from "@emotion/styled";
+import { BenefitContentResponseDto } from "../../model/benefit";
+import { useNavigate } from "react-router-dom";
 
-const List = () => {
+const List = ({
+  benefitList,
+}: {
+  benefitList: BenefitContentResponseDto[] | undefined;
+}) => {
+  const navigate = useNavigate();
   return (
     <Container>
-      <Content>
-        <h3>혜택 제목</h3>
-        <p>혜택 상세 내용</p>
-      </Content>
+      {benefitList?.map((value) => (
+        <Content key={value.id} onClick={() => navigate(`/detail/${value.id}`)}>
+          <h3>{value.title}</h3>
+          <p>{value.content}</p>
+        </Content>
+      ))}
     </Container>
   );
 };

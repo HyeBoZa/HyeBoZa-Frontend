@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { DownArrowIcon } from "../../assets";
 import { DropDownItem } from "../../constants/main";
 import { useState } from "react";
-import { DropDownItemType } from "../../model";
+import { DropDownItemType } from "../../model/common";
 
 const DropDown = ({
   dropDownResult,

@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { RightArrowIcon } from "../../assets";
 import DropDown from "./DropDown";
 import { useNavigate } from "react-router-dom";
-import { DropDownItemType } from "../../model";
+import { DropDownItemType } from "../../model/common";
 
 interface Props {
   dropDownResult: DropDownItemType;
