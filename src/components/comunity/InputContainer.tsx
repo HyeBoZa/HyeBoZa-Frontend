@@ -4,8 +4,6 @@ import { useNavigate } from "react-router-dom";
 
 interface Props {
   setInput: React.Dispatch<React.SetStateAction<string>>;
-  dropDownResult: string;
-  setDropDownResult: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const InputContainer = ({ setInput }: Props) => {

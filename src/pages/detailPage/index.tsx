@@ -13,15 +13,13 @@ const DatailPage = () => {
     getDetailBenefit(id as number)
   );
 
-  console.log(data);
-
   return (
     <Layout>
       <Wrapper>
         <Head>
           <div>
             <h1>{data?.title}</h1>
-            <GoHome onClick={() => navigate("/")}>홈으로 가기</GoHome>
+            <GoHome onClick={() => navigate("/")}>뒤로 가기</GoHome>
           </div>
           <img src={Logo} />
         </Head>
