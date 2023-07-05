@@ -29,7 +29,7 @@ const WritePage = () => {
               setInputs({ title: e.target.value, content: inputs.content })
             }
           />
-          <img src={Logo} alt="로고" />
+          <img src={Logo} onClick={() => navigate("/")} alt="로고" />
         </Head>
         <Text
           placeholder="내용을 입력해주세요."
