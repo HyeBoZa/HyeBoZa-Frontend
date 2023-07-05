@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { ComunityLogo } from "../../assets";
 import Background from "../../assets/background.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ComunityList from "../../components/comunity/ComunityList";
 import InputContainer from "../../components/comunity/InputContainer";
 import {
@@ -23,15 +23,21 @@ const BoardPage = () => {
     () => getSearchContentList(input),
     {
       enabled: input !== "",
-      onSuccess: () => {
-        setContentList(searchContentList?.board_list);
-      },
+      cacheTime: 0,
     }
   );
 
+  useEffect(() => {
+    if (input === "") {
+      setContentList(data?.board_list);
+    } else {
+      setContentList(searchContentList?.board_list);
+    }
+  }, [searchContentList]);
+
   return (
     <Container>
-      <img src={ComunityLogo} />
+      <img src={ComunityLogo} alt="커뮤니티 로고" />
       <InputContainer setInput={setInput} />
       <ComunityList contentList={contentList} />
     </Container>
