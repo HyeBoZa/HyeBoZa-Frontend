@@ -51,7 +51,7 @@ const Container = styled.div`
   flex-direction: column;
   gap: 43px;
   > img {
-    height: 200px;
+    height: 150px;
   }
 `;
 
