@@ -18,7 +18,7 @@ const PostPage = () => {
             <h1>{data?.title}</h1>
             <GoHome onClick={() => navigate("/comunity")}>뒤로 가기</GoHome>
           </div>
-          <img src={Logo} />
+          <img src={Logo} alt="로고" />
         </Head>
         <Text>{data?.content}</Text>
       </Wrapper>

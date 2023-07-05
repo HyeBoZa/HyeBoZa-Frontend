@@ -19,7 +19,7 @@ const MainPage = () => {
 
   return (
     <Container>
-      <img src={Logo} />
+      <img src={Logo} alt="로고" />
       <BtnContainer
         dropDownResult={dropDownResult}
         setDropDownResult={setDropDownResult}

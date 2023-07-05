@@ -25,7 +25,7 @@ const DropDown = ({
     <Container>
       <Head onClick={() => setIsOpenDropDown(!isOpenDropDown)}>
         <p>{dropDownResult.name}</p>
-        <img src={DownArrowIcon} />
+        <img src={DownArrowIcon} alt="아래 화살표" />
       </Head>
       {isOpenDropDown && (
         <Body>

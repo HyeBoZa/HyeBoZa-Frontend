@@ -24,7 +24,7 @@ const BtnContainer = ({ dropDownResult, setDropDownResult }: Props) => {
       />
       <Btn onClick={() => navigate("/comunity")}>
         <p>커뮤니티</p>
-        <img src={RightArrowIcon} />
+        <img src={RightArrowIcon} alt="오른쪽 화살표" />
       </Btn>
     </Wrapper>
   );

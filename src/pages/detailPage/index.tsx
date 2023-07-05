@@ -21,7 +21,7 @@ const DatailPage = () => {
             <h1>{data?.title}</h1>
             <GoHome onClick={() => navigate("/")}>뒤로 가기</GoHome>
           </div>
-          <img src={Logo} />
+          <img src={Logo} alt="로고" />
         </Head>
         <Text>
           혜택 종류: {data?.benefit_category}
