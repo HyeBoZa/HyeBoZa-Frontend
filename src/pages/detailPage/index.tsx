@@ -65,6 +65,7 @@ const Text = styled.p`
 `;
 
 const GoHome = styled.button`
+  cursor: pointer;
   width: 125px;
   height: 36px;
   border-radius: 12px;
