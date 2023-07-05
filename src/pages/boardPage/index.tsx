@@ -4,20 +4,36 @@ import Background from "../../assets/background.png";
 import { useState } from "react";
 import ComunityList from "../../components/comunity/ComunityList";
 import InputContainer from "../../components/comunity/InputContainer";
+import {
+  ContentResponseDto,
+  getContentList,
+  getSearchContentList,
+} from "../../utils/apis/comunity";
+import { useQuery } from "react-query";
 
 const BoardPage = () => {
   const [input, setInput] = useState<string>("");
-  const [dropDownResult, setDropDownResult] = useState<string>("카테고리");
+  const { data } = useQuery(["board_list"], () => getContentList());
+  const [contentList, setContentList] = useState<
+    ContentResponseDto[] | undefined
+  >(data?.board_list);
+
+  const { data: searchContentList } = useQuery(
+    ["search_content_list", input],
+    () => getSearchContentList(input),
+    {
+      enabled: input !== "",
+      onSuccess: () => {
+        setContentList(searchContentList?.board_list);
+      },
+    }
+  );
 
   return (
     <Container>
       <img src={ComunityLogo} />
-      <InputContainer
-        setInput={setInput}
-        dropDownResult={dropDownResult}
-        setDropDownResult={setDropDownResult}
-      />
-      <ComunityList />
+      <InputContainer setInput={setInput} />
+      <ComunityList contentList={contentList} />
     </Container>
   );
 };

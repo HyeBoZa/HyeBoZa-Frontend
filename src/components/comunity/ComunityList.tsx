@@ -1,12 +1,21 @@
 import styled from "@emotion/styled";
+import { ContentResponseDto } from "../../utils/apis/comunity";
+import { useNavigate } from "react-router-dom";
 
-const ComunityList = () => {
+const ComunityList = ({
+  contentList,
+}: {
+  contentList: ContentResponseDto[] | undefined;
+}) => {
+  const navigate = useNavigate();
   return (
     <Container>
-      <Content>
-        <h3>글 제목</h3>
-        <p>글 상세 내용</p>
-      </Content>
+      {contentList?.map((value) => (
+        <Content key={value.id} onClick={() => navigate(`/post/${value.id}`)}>
+          <h3>{value.title}</h3>
+          <p>{value.content}</p>
+        </Content>
+      ))}
     </Container>
   );
 };
