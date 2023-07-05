@@ -1,7 +1,19 @@
 import instance from "../../axios";
 
-export const searchContent = async (title: string) => {
-  const response = await instance.get("/board/search", { params: { title } });
+export interface ContentResponseDto {
+  content: string;
+  id: number;
+  title: string;
+}
+
+export interface ContentListResponseDto {
+  board_list: ContentResponseDto[];
+}
+
+export const getSearchContentList = async (title: string) => {
+  const response = await instance.get<ContentListResponseDto>(
+    `/board/search?title=${title}`
+  );
   return response.data;
 };
 
@@ -20,6 +32,6 @@ export const postContent = async (request: PostContentRequestDto) => {
 };
 
 export const getContentList = async () => {
-  const response = await instance.get(`/board`);
+  const response = await instance.get<ContentListResponseDto>(`/board`);
   return response.data;
 };
