@@ -79,15 +79,15 @@ const Head = styled.div`
 const Title = styled.input`
   width: 350px;
   height: 45px;
-  font-size: 25px;
-  padding: 10px;
+  font-size: 20px;
+  padding: 20px;
   border: none;
-  border-radius: 15px;
+  border-radius: 20px;
   color: ${({ theme }) => theme.WHITE};
   background-color: ${({ theme }) => theme.MAIN3};
+  font-weight: 500;
   ::placeholder {
     color: ${({ theme }) => theme.WHITE};
-    font-size: 25px;
   }
 `;
 
