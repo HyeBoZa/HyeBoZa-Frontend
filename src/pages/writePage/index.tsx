@@ -82,6 +82,7 @@ const Title = styled.input`
   font-size: 20px;
   padding: 20px;
   border: none;
+  outline: none;
   border-radius: 20px;
   color: ${({ theme }) => theme.WHITE};
   background-color: ${({ theme }) => theme.MAIN3};
@@ -97,6 +98,7 @@ const Text = styled.textarea`
   height: 500px;
   padding: 12px;
   border: none;
+  outline: none;
   border-radius: 15px;
   color: ${({ theme }) => theme.WHITE};
   background-color: ${({ theme }) => theme.MAIN3};
