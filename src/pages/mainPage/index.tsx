@@ -8,21 +8,32 @@ import { useQuery } from "react-query";
 import { getCategoryBenefit } from "../../utils/apis/benefit";
 
 const MainPage = () => {
-  const [dropDownResult, setDropDownResult] = useState({
+  const [categoryDropDownResult, setCategoryDropDownResult] = useState({
     name: "어린이",
     id: "CHILD",
   });
+  const [benefitDropDownResult, setBenefitDropDownResult] = useState({
+    name: "카드",
+    id: "CARD",
+  });
 
-  const { data } = useQuery(["benefit_list", dropDownResult], () =>
-    getCategoryBenefit(dropDownResult.id)
+  const { data } = useQuery(
+    ["benefit_list", categoryDropDownResult, benefitDropDownResult],
+    () =>
+      getCategoryBenefit({
+        category: categoryDropDownResult.id,
+        benefit: benefitDropDownResult.id,
+      })
   );
 
   return (
     <Container>
       <img src={Logo} alt="로고" />
       <BtnContainer
-        dropDownResult={dropDownResult}
-        setDropDownResult={setDropDownResult}
+        categoryDropDownResult={categoryDropDownResult}
+        setCategoryDropDownResult={setCategoryDropDownResult}
+        benefitDropDownResult={benefitDropDownResult}
+        setBenefitDropDownResult={setBenefitDropDownResult}
       />
       <List benefitList={data?.benefit_list} />
     </Container>

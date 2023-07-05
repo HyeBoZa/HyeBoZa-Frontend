@@ -3,10 +3,21 @@ import { RightArrowIcon } from "../../assets";
 import DropDown from "./DropDown";
 import { useNavigate } from "react-router-dom";
 import { DropDownItemType } from "../../model/common";
+import {
+  BenefitDropDownItem,
+  CaterotyDropDownItem,
+} from "../../constants/main";
 
 interface Props {
-  dropDownResult: DropDownItemType;
-  setDropDownResult: React.Dispatch<
+  categoryDropDownResult: DropDownItemType;
+  setCategoryDropDownResult: React.Dispatch<
+    React.SetStateAction<{
+      name: string;
+      id: string;
+    }>
+  >;
+  benefitDropDownResult: DropDownItemType;
+  setBenefitDropDownResult: React.Dispatch<
     React.SetStateAction<{
       name: string;
       id: string;
@@ -14,13 +25,24 @@ interface Props {
   >;
 }
 
-const BtnContainer = ({ dropDownResult, setDropDownResult }: Props) => {
+const BtnContainer = ({
+  categoryDropDownResult,
+  setCategoryDropDownResult,
+  benefitDropDownResult,
+  setBenefitDropDownResult,
+}: Props) => {
   const navigate = useNavigate();
   return (
     <Wrapper>
       <DropDown
-        dropDownResult={dropDownResult}
-        setDropDownResult={setDropDownResult}
+        dropDownResult={categoryDropDownResult}
+        setDropDownResult={setCategoryDropDownResult}
+        dropDownItem={CaterotyDropDownItem}
+      />
+      <DropDown
+        dropDownResult={benefitDropDownResult}
+        setDropDownResult={setBenefitDropDownResult}
+        dropDownItem={BenefitDropDownItem}
       />
       <Btn onClick={() => navigate("/comunity")}>
         <p>커뮤니티</p>
@@ -34,7 +56,7 @@ const Wrapper = styled.div`
   display: flex;
   gap: 13px;
   width: 960px;
-  justify-content: space-between;
+  justify-content: flex-end;
   position: relative;
 `;
 const Btn = styled.button`

@@ -13,7 +13,11 @@ const ComunityList = ({
       {contentList?.map((value) => (
         <Content key={value.id} onClick={() => navigate(`/post/${value.id}`)}>
           <h3>{value.title}</h3>
-          <p>{value.content.substr(0, 70) + "..."}</p>
+          <p>
+            {value.content.length >= 70
+              ? value.content.substr(0, 70) + "..."
+              : value.content}
+          </p>
         </Content>
       ))}
     </Container>

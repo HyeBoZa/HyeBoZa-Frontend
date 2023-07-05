@@ -8,9 +8,14 @@ interface BenefitListType {
   benefit_list: BenefitContentResponseDto[];
 }
 
-export const getCategoryBenefit = async (category: string) => {
+interface BenefitListRequestDto {
+  category: string;
+  benefit: string;
+}
+
+export const getCategoryBenefit = async (request: BenefitListRequestDto) => {
   const response = await instance.get<BenefitListType>(
-    `/benefit?user=${category}`
+    `/benefit?user=${request.category}&benefit=${request.benefit}`
   );
   return response.data;
 };

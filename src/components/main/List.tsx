@@ -13,7 +13,11 @@ const List = ({
       {benefitList?.map((value) => (
         <Content key={value.id} onClick={() => navigate(`/detail/${value.id}`)}>
           <h3>{value.title}</h3>
-          <p>{value.content}</p>
+          <p>
+            {value.content.length >= 70
+              ? value.content.substr(0, 70) + "..."
+              : value.content}
+          </p>
         </Content>
       ))}
     </Container>
