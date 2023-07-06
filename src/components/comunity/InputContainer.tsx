@@ -11,17 +11,17 @@ const InputContainer = ({ setInput }: Props) => {
   return (
     <Wrapper>
       <SearchInput
-        placeholder="찾고싶은 내용을 검색해주세요."
+        placeholder="찾고싶은 내용을 입력해주세요."
         onChange={(e) => setInput(e.target.value)}
       />
-      <img src={SearchIcon} />
+      <img src={SearchIcon} alt="검색 아이콘" />
       <Btn onClick={() => navigate("/")}>
         <p>홈으로</p>
-        <img src={RightArrowIcon} />
+        <img src={RightArrowIcon} alt="오른쪽 화살표" />
       </Btn>
       <Btn onClick={() => navigate("/write")}>
         <p>글쓰러 가기</p>
-        <img src={RightArrowIcon} />
+        <img src={RightArrowIcon} alt="오른쪽 화살표" />
       </Btn>
     </Wrapper>
   );
