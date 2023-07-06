@@ -16,9 +16,8 @@ const PostPage = () => {
         <Head>
           <div>
             <h1>{data?.title}</h1>
-            <GoHome onClick={() => navigate("/comunity")}>뒤로 가기</GoHome>
           </div>
-          <img src={Logo} alt="로고" />
+          <img src={Logo} alt="로고" onClick={() => navigate("/comunity")} />
         </Head>
         <Text>{data?.content}</Text>
       </Wrapper>
@@ -38,12 +37,12 @@ const Layout = styled.div`
 
 const Wrapper = styled.div`
   color: ${({ theme }) => theme.MAIN1};
-  width: 700px;
-  height: 700px;
+  width: 600px;
+  max-height: 400px;
   border: solid 2px ${({ theme }) => theme.MAIN1};
   border-radius: 12px;
   background: ${({ theme }) => theme.WHITE};
-  padding: 10px 20px;
+  padding: 30px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -54,6 +53,8 @@ const Head = styled.div`
   font-size: 15px;
   justify-content: space-between;
   align-items: center;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e7e7e7;
   > img {
     width: 80px;
   }
@@ -64,21 +65,10 @@ const Head = styled.div`
 `;
 
 const Text = styled.p`
+  padding-top: 15px;
   font-size: 23px;
   height: 800px;
   overflow-y: auto;
-`;
-
-const GoHome = styled.button`
-  cursor: pointer;
-  width: 125px;
-  height: 36px;
-  border-radius: 12px;
-  font-size: 15px;
-  font-weight: 700;
-  background: ${({ theme }) => theme.WHITE};
-  border: 2px solid ${({ theme }) => theme.MAIN1};
-  color: ${({ theme }) => theme.MAIN1};
 `;
 
 export default PostPage;
