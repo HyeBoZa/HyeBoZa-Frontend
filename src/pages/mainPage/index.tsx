@@ -9,20 +9,22 @@ import { getCategoryBenefit } from "../../utils/apis/benefit";
 
 const MainPage = () => {
   const [categoryDropDownResult, setCategoryDropDownResult] = useState({
-    name: "어린이",
-    id: "CHILD",
+    name: "대상자",
+    id: "",
   });
   const [benefitDropDownResult, setBenefitDropDownResult] = useState({
-    name: "카드",
-    id: "CARD",
+    name: "종류",
+    id: "",
   });
+  const [input, setInput] = useState<string>("");
 
   const { data } = useQuery(
-    ["benefit_list", categoryDropDownResult, benefitDropDownResult],
+    ["benefit_list", categoryDropDownResult, benefitDropDownResult, input],
     () =>
       getCategoryBenefit({
         category: categoryDropDownResult.id,
         benefit: benefitDropDownResult.id,
+        title: input,
       })
   );
 
@@ -34,6 +36,7 @@ const MainPage = () => {
         setCategoryDropDownResult={setCategoryDropDownResult}
         benefitDropDownResult={benefitDropDownResult}
         setBenefitDropDownResult={setBenefitDropDownResult}
+        setInput={setInput}
       />
       <List benefitList={data?.benefit_list} />
     </Container>
