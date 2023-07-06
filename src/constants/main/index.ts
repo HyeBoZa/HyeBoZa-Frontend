@@ -8,7 +8,7 @@ export const CaterotyDropDownItem = [
 
 export const BenefitDropDownItem = [
   { name: "카드", id: "CARD" },
-  { name: "혜택", id: "BENEFIT" },
   { name: "제도", id: "ROYAL" },
   { name: "정책", id: "BOOK" },
+  { name: "ETC", id: "BENEFIT" },
 ];
