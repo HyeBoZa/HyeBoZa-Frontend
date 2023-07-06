@@ -4,6 +4,7 @@ import { QueryClientProvider, QueryClient } from "react-query";
 import { theme } from "./styles/Theme";
 import MainRouter from "./router/MainRouter";
 import { BrowserRouter } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -21,6 +22,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <ThemeProvider theme={theme}>
         <Global styles={globalStyle} />
+        <Toaster />
         <BrowserRouter>
           <MainRouter />
         </BrowserRouter>
