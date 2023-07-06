@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useMutation } from "react-query";
 import { postContent } from "../../utils/apis/comunity";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-hot-toast";
 
 const WritePage = () => {
   const navigate = useNavigate();
@@ -15,7 +16,8 @@ const WritePage = () => {
 
   const { mutate } = useMutation(() => postContent(inputs), {
     onSuccess: () => {
-      navigate("/comunity");
+      toast.success("게시물이 성공적으로 생성되었습니다.", { duration: 1000 });
+      navigate("/");
     },
   });
 
