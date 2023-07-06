@@ -11,11 +11,12 @@ interface BenefitListType {
 interface BenefitListRequestDto {
   category: string;
   benefit: string;
+  title: string;
 }
 
 export const getCategoryBenefit = async (request: BenefitListRequestDto) => {
   const response = await instance.get<BenefitListType>(
-    `/benefit?user=${request.category}&benefit=${request.benefit}`
+    `/benefit?user=${request.category}&benefit=${request.benefit}&title=${request.title}`
   );
   return response.data;
 };
